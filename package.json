@@ -1,0 +1,46 @@
+{
+  "name": "next-prisma-polyscale-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@polyscale/polyscale-node": "git+https://github.com/polyscale/polyscale-node.git",
+    "@prisma/client": "^3.3.0-dev.40",
+    "@slack/webhook": "^6.0.0",
+    "antd": "^4.16.13",
+    "bfj": "^7.0.2",
+    "dotenv": "^10.0.0",
+    "faker": "^5.5.3",
+    "fast-stats": "0.0.6",
+    "leaflet": "^1.7.1",
+    "next": "11.1.2",
+    "nprogress": "^0.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-leaflet": "^3.2.1",
+    "react-map-gl": "^6.1.17",
+    "readlines-ng": "^0.2.1",
+    "request": "^2.88.2",
+    "sharp": "^0.29.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/faker": "^5.5.8",
+    "@types/leaflet": "^1.7.5",
+    "@types/react": "17.0.21",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "prisma": "^3.3.0-dev.40",
+    "ts-node": "^10.2.1",
+    "typescript": "4.4.3"
+  },
+  "prisma": {
+    "seed": "node seed.js"
+  }
+}

@@ -1,0 +1,50 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgres"
+    url      = env("DATABASE_URL")
+}
+
+enum Type {
+    House
+    MultiFamilyHome
+    Appartement
+}
+
+model Property {
+    id           String         @id @default(uuid())
+    title        String
+    description  String
+    views        Int            @default(0)
+    saves        Int            @default(0)
+    price        Float
+    area         Int
+    type         Type
+    lat          Float
+    lon          Float
+    bedrooms     Int
+    bathrooms    Int
+    number       String
+    street       String
+    city         String
+    district     String
+    region       String
+    postcode     String
+    createdAt    DateTime       @default(now())
+    salesHistory SalesHistory[]
+
+    @@index([city])
+}
+
+model SalesHistory {
+    id         String   @id @default(uuid())
+    propertyId String
+    property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+    soldAt     DateTime
+    price      Float
+
+    @@index([soldAt])
+    @@index([propertyId])
+}
