@@ -11,7 +11,6 @@
   "dependencies": {
     "@polyscale/polyscale-node": "git+https://github.com/polyscale/polyscale-node.git",
     "@prisma/client": "^3.3.0-dev.40",
-    "@slack/webhook": "^6.0.0",
     "antd": "^4.16.13",
     "bfj": "^7.0.2",
     "dotenv": "^10.0.0",
