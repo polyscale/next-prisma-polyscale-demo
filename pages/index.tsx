@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { prisma } from "../lib/prisma";
@@ -27,7 +27,7 @@ const Home: NextPage<{ properties: Property[] }> = ({ properties }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const properties = await prisma.property.findMany({
     orderBy: {
       createdAt: "desc",
