@@ -1,6 +1,7 @@
 import { PrismaClient, Property, SalesHistory } from "@prisma/client";
 import { readFile } from "fs/promises";
-import { resolve } from "path";
+import readline from "node:readline";
+import { resolve } from "node:path";
 
 const prisma = new PrismaClient();
 
@@ -39,8 +40,8 @@ const main = async () => {
 
     seededProperties += chunkSize;
 
-    process.stdout.clearLine(0);
-    process.stdout.cursorTo(0);
+    readline.clearLine(process.stdout, 0);
+    readline.cursorTo(process.stdout, 0);
     process.stdout.write(
       `Seeding Property: ${seededProperties / chunkSize}/${
         properties.length / chunkSize
@@ -60,8 +61,8 @@ const main = async () => {
 
     seededSalesHistories += chunkSize;
 
-    process.stdout.clearLine(0);
-    process.stdout.cursorTo(0);
+    readline.clearLine(process.stdout, 0);
+    readline.cursorTo(process.stdout, 0);
     process.stdout.write(
       `Seeding SalesHistory: ${seededSalesHistories / chunkSize}/${Math.ceil(
         salesHistories.length / chunkSize
