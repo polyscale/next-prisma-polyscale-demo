@@ -35,7 +35,7 @@ COPY --from=builder /app ./
 RUN chown 1001:1001 /app && chown 1001:1001 /app/* /app/.next/* -R
 USER nextjs
 
-ENV PORT 3333
+ENV PORT 8080
 
 CMD ["yarn", "start"]
 
