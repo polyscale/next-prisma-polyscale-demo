@@ -36,3 +36,6 @@ yarn-error.log*
 
 /docker
 /data
+
+# fly
+fly.toml
